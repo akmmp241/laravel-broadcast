@@ -6,6 +6,11 @@
 
 import axios from 'axios';
 window.axios = axios;
+import Pusher from 'pusher-js';
+
+window.pusher = new Pusher(import.meta.env.VITE_PUSHER_APP_KEY, {
+    cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
+});
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
